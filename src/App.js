@@ -9,8 +9,8 @@ import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
-
+  //const [{ user }, dispatch] = useStateValue();   
+  const [,dispatch] = useStateValue(); // user variable is of no use here
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
